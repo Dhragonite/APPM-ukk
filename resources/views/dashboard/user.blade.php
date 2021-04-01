@@ -27,7 +27,7 @@
       <h1>Aplikasi Pelaporan Pengaduan Masyarakat</h1>
     </div>
    </div>
-    <section id="contact" class="contact">
+    
       <div class="container">
           <form role="form" enctype="multipart/form-data" method="POST" data-toggle="validator" action="{{ route('pengaduan.store') }}" class="php-email-form">
                         {{ csrf_field() }} {{ method_field('POST') }}
@@ -72,7 +72,7 @@
                             <div class="form-group">
                                 <div class="custom-file">
                                     <label class="form-label">Foto Bukti :</label>
-                                    <input type="file" accept="image/*" class="form-control-file{{ $errors->has('foto') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukan foto bukti*') }}" name="foto" value="{{ old('foto') }}" required>
+                                    <input type="file" accept="image/*" class="form-control{{ $errors->has('foto') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukan foto bukti*') }}" name="foto" value="{{ old('foto') }}" required>
                                 </div>
                                 @if ($errors->has('foto'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -94,8 +94,8 @@
         </div>
 
       </div>
-    </section>
 
+    @include('layouts.footers.nav')
   </main><!-- End #main -->
 @endsection
 

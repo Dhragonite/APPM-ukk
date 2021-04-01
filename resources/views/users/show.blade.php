@@ -1,17 +1,36 @@
-@extends('layouts.app',['class' => 'bg-default'], ['title' => __('User Profile')])
+@extends('layouts.app2',['class' => 'bg-default'], ['title' => __('User Profile')])
+
+@section('style')
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+  <!-- Favicons -->
+<link href="{{ asset('maundy') }}/assets/img/favicon.png" rel="icon">
+<link href="{{ asset('maundy') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+<link href="{{ asset('maundy') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ asset('maundy') }}/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
-<div class="header bg-gradient-primary py-7 py-lg-8">
-</div>
-    <div class="container-fluid mt--9">
+  <main id="main" class="" >
+  <div class="container-fluid mt--9" style="padding-top:150pt;">
         <div class="row justify-content-md-center">
             <div class="col-xl-11 mb-5 mb-xl-0">
-                <div class="card shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">{{ __('List of User & Role') }}</h3>
+                            <h3 class="mb-0 text-light" style="padding-left:20pt;">{{ __('List of User & Role') }}</h3>
                         </div>
                     </div>
+                <div class="card shadow" >
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3">
                             <span></span>
@@ -43,12 +62,23 @@
             </div>
         </div>
     </div>
-    @include('layouts.footers.nav')
 </div>
+    @include('layouts.footers.nav')
 @include('users.form')
+  </main><!-- End #main -->
 @endsection
 
 @section('script')
+ <!-- Vendor JS Files -->
+<script src="{{ asset('maundy') }}/assets/vendor/jquery/jquery.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/php-email-form/validate.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main JS File -->
+<script src="{{ asset('maundy') }}/assets/js/main.js"></script>
+
 <!-- DataTables -->
 <script src="{{ asset('assets') }}/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
@@ -349,3 +379,13 @@
     }
 </script>
 @endsection
+
+
+
+
+
+
+
+
+
+

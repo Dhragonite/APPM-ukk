@@ -6,18 +6,19 @@
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{ asset('urbanuiLogin') }}/assets/css/login.css">
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
 @endsection
 
 @section('content')
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
     <div class="container">
-      <div class="card login-card">
+      <div class="card login-card bg-transparent">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="{{ asset('urbanuiLogin') }}/assets/images/login.jpg" alt="login" class="login-card-img">
+          <img src="{{ asset('maundy') }}/assets/img/bg.jpg" alt="login" class="login-card-img">
           </div>
           <div class="col-md-7">
-            <div class="card-body">
+            <div class="card-body bg-white">
               <!-- <div class="brand-wrapper">
                 <img src="{{ asset('urbanuiLogin') }}/assets/images/logo.svg" alt="logo" class="logo">
               </div> -->
@@ -48,7 +49,7 @@
                 <a href="{{ route('password.request') }}" class="forgot-password-link">Lupa password?</a>
                 @endif
                 <p class="login-card-footer-text">Belum Punya Akun? <a href="{{ route('register') }}" class="text-reset">Daftar di sini!</a></p>
-                <p class="link"><a href="/" class="text-reset">Kembali</a></p>
+                <a href="/" class="text-dark">Kembali</a>  
                 <nav class="login-card-footer-nav">
                   <a href="#!">Terms of use.</a>
                   <a href="#!">Privacy policy</a>

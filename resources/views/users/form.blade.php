@@ -12,7 +12,7 @@
                 {{ csrf_field() }} {{ method_field('POST') }}
                 <input type="hidden" id="id" name="id">
                 <div class="modal-body">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center text-dark">
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="nama">Nama <small style="color: red;"> *required</small></label>

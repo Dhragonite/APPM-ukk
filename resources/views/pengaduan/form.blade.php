@@ -30,19 +30,19 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-check">
                                             <input type="radio" for="status" name="status" class="cb_role form-check-input" id="status1" value="belum di proses">
-                                            <label class="form-check-label" for="status1">Belum di proses</label>
+                                            <label class="form-check-label text-dark" for="status1">Belum di proses</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-check">
                                             <input type="radio" for="status" name="status" class="cb_role form-check-input" id="status2" value="proses">
-                                            <label class="form-check-label" for="status2">Proses</label>
+                                            <label class="form-check-label text-dark" for="status2">Proses</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-check">
                                             <input type="radio" for="status" name="status" class="cb_role form-check-input" id="status3" value="selesai">
-                                            <label class="form-check-label" for="status3">Selesai</label>
+                                            <label class="form-check-label text-dark" for="status3">Selesai</label>
                                         </div>
                                     </div>
                                 </div>

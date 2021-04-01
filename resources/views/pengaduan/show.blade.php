@@ -1,13 +1,33 @@
-@extends('layouts.app', ['class' => 'bg-default'], ['title' => __('User Profile')])
+@extends('layouts.app2', ['class' => 'bg-default'], ['title' => __('User Profile')])
+
+@section('style')
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+  <!-- Favicons -->
+<link href="{{ asset('maundy') }}/assets/img/favicon.png" rel="icon">
+<link href="{{ asset('maundy') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+<link href="{{ asset('maundy') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ asset('maundy') }}/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
-<div class="header bg-gradient-primary py-7 py-lg-8">
+<div class="header py-7 py-lg-8">
     <div class="container">
         <div class="header-body text-center mb-3">
             <div class="row justify-content-center">    
                 <div class="col-lg-12 col-md-6">
                     <h1 class="text-white">{{ __('Detail Laporan') }}</h1>
-                    <hr style="width:150px; border: 3px solid white; border-radius: 5px;">
+                    <hr style="width:150px; border: 3px solid white; border-radius: 5px; visibility:hidden">
                 </div>
             </div>
         </div>
@@ -17,21 +37,31 @@
         <div class="row justify-content-md-center">
             <div class="col-xl-11 mb-5 mb-xl-0">
                 <div class="card mb-4 shadow">
-                    <div class="card-body bg-secondary">
+                    <div class="card-body bg-light">
                         <div class="col-xl-12 mb-4">
                             <div class="row justify-content-center">
                                 <h2 class="text-primary">{{ __('Detail Pelapor :') }}</h2>
                             </div>
-                            <h3 class="text-default">{{ __('Judul Laporan : ') }}<a class="text text-default ">{{$pengaduan->judul}}</a></h3>
-                            <h3 class="text-default">{{ __('Nama Pelapor : ') }}<a class="text text-default ">{{$pengaduan->users->nama}}</a></h3>
-                            <h3 class="text-default">{{ __('NIK Pelapor : ') }}<a class="text text-default ">{{$pengaduan->nik}}</a></h3>
-                            <h3 class="text-default">{{ __('Tanggal Laporan : ') }}<a class="text text-default ">{{$pengaduan->tgl_pengaduan}}</a></h3>
-                            <h3 class="text-default">{{ __('Status : ') }}<a class="text text-default ">{{$pengaduan->status}}</a></h3>
+                            <div class="row justify-content-center">
+                            <a class="text-default">{{ __('Judul Laporan : ') }}<a class="text text-default ">{{$pengaduan->judul}}</a></a>
+                            </div>
+                            <div class="row justify-content-center">
+                            <a class="text-default">{{ __('Nama Pelapor : ') }}<a class="text text-default ">{{$pengaduan->users->nama}}</a></a>
+                            </div>
+                            <div class="row justify-content-center">
+                            <a class="text-default">{{ __('NIK Pelapor : ') }}<a class="text text-default ">{{$pengaduan->nik}}</a></a>
+                            </div>
+                            <div class="row justify-content-center">
+                            <a class="text-default">{{ __('Tanggal Laporan : ') }}<a class="text text-default ">{{$pengaduan->tgl_pengaduan}}</a></a>
+                            </div>
+                            <div class="row justify-content-center">
+                            <a class="text-default">{{ __('Status : ') }}<a class="text text-default ">{{$pengaduan->status}}</a></a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="card mb-4 shadow">
-                    <div class="card-body bg-secondary">
+                    <div class="card-body bg-light">
                         <div class="col-xl-12 mb-4">
                             <div class="row justify-content-center">
                                 <h2 class="text-primary">{{ __('Isi Laporan :') }}</h2>
@@ -43,19 +73,19 @@
                     </div>
                 </div>
                 <div class="card mb-4 shadow">
-                    <div class="card-body bg-secondary">
+                    <div class="card-body bg-light">
                         <div class="col-xl-12 mb-4">
                             <div class="row justify-content-center">
                                 <h2 class="text-primary">{{ __('Foto :') }}</h2>
                             </div>
                             <div class="row justify-content-center">
-                                <img id="foto" src="{{URL::asset($pengaduan->foto)}}">
+                                <img id="foto" src="{{URL::asset($pengaduan->foto)}}" width="500" height="600">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card mb-4 shadow">
-                    <div class="card-body bg-secondary">
+                    <div class="card-body bg-light">
                         <div class="col-xl-12 mb-4">
                             <div class="row justify-content-center">
                                 <h2 class="text-primary">{{ __('Tanggapan :') }}</h2>
@@ -76,9 +106,11 @@
                 </div>
             </div>
             @hasanyrole('petugas|admin')
+            @if($pengaduan->status != selesai)
             <div class="col-xl-12 mb-4">
                 <button onclick="tanggapanForm()" class="btn btn-info btn-small btn-circle mt-3 text-white">Tanggapi</button> 
             </div>
+            @endif
             @endhasanyrole
         </div>
     </div>
@@ -103,6 +135,15 @@
 @endsection
 
 @section('script')
+ <!-- Vendor JS Files -->
+<script src="{{ asset('maundy') }}/assets/vendor/jquery/jquery.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/php-email-form/validate.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main JS File -->
+<script src="{{ asset('maundy') }}/assets/js/main.js"></script>
 <!-- DataTables -->
 <script src="{{ asset('assets') }}/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
@@ -192,3 +233,11 @@ $(document).ready(function() {
 });
 </script>
 @endsection
+
+
+
+
+
+
+
+

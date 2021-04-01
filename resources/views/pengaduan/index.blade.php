@@ -1,22 +1,42 @@
-@extends('layouts.app', ['title' => __('User Profile')] , ['class' => 'bg-default'])
+@extends('layouts.app2', ['title' => __('User Profile')] , ['class' => 'bg-default'])
+
+@section('style')
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+  <!-- Favicons -->
+<link href="{{ asset('maundy') }}/assets/img/favicon.png" rel="icon">
+<link href="{{ asset('maundy') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+<link href="{{ asset('maundy') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ asset('maundy') }}/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
-<div class="header bg-gradient-primary py-7 py-lg-8">
-</div>
-<div class="container-fluid mt--9 ">
+  <main id="main" class="">
+
+  <div class="container-fluid" style="padding-top:100pt;" >
         <div class="row justify-content-md-center">
             <div class="col-xl-11 mb-5 mb-xl-0">
-                <div class="card shadow">
+                <div class="card shadow bg-transparent">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">{{ __('List Laporan') }}</h3>
+                            <h3 class="mb-0 text-white" style="padding-left:50px">Laporan</h3>
                         </div>
                     </div>
-                    <div class="card-body bg-secondary">
-                        <div class="default-tab">
+                    <div class="card-body bg-light">
+                    <div class="default-tab">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-public-tab" data-toggle="tab" href="#nav-public"
+                                    <a class="nav-item nav-link active " id="nav-public-tab" data-toggle="tab" href="#nav-public"
                                         role="tab" aria-controls="nav-public" aria-selected="true">Public</a>
                                     <a class="nav-item nav-link" id="nav-private-tab" data-toggle="tab" href="#nav-private"
                                         role="tab" aria-controls="nav-private" aria-selected="false">Private</a>
@@ -78,9 +98,19 @@
     @include('layouts.footers.nav')
 </div>
 
+  </main><!-- End #main -->
 @endsection
 
 @section('script')
+ <!-- Vendor JS Files -->
+<script src="{{ asset('maundy') }}/assets/vendor/jquery/jquery.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/php-email-form/validate.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main JS File -->
+<script src="{{ asset('maundy') }}/assets/js/main.js"></script>
 <!-- DataTables -->
 <script src="{{ asset('assets') }}/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
@@ -141,4 +171,9 @@ $(document).ready(function() {
     }
 </script>
 @endsection
+
+
+
+
+
 

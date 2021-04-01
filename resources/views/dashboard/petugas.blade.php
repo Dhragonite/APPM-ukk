@@ -21,16 +21,16 @@
 @section('content')
   <main id="main">
 
-  <div class="container-fluid mt--7 " style="padding-top:100pt">
-        <div class="row justify-content-md-center">
+  <div class="container-fluid mt--7 " style="padding-top:100pt" >
+        <div class="row justify-content-md-center ">
             <div class="col-xl-11 mb-5 mb-xl-0">
-                <div class="card shadow">
+                <div class="card shadow bg-transparent">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">Laporan</h3>
+                            <h3 class="mb-0 text-white" style="padding-left:50px">Laporan</h3>
                         </div>
                     </div>
-                    <div class="card-body bg-dark">
+                    <div class="card-body bg-light">
                         <div class="default-tab">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -48,12 +48,12 @@
                                         <span></span>
                                         <div class="btn-group btn-group-md mb-3">
                                             <button onclick="refreshTable()" type="button"
-                                            class="btn btn-outline-primary btn-sm" title="Refresh data"><i
+                                            class="btn btn-outline-light btn-sm" title="Refresh data"><i
                                             class="fa fa-refresh"></i> Refresh</button>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table style="width: 100% !important" id="tabel_none" class="table align-items-center text-white">
+                                        <table style="width: 100% !important" id="tabel_none" class="table align-items-center">
                                             <thead>
                                                 <tr>
                                                     <th>Judul</th>
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table style="width: 100% !important" id="tabel_selesai" class="table align-items-center">
+                                        <table style="width: 100% !important" id="tabel_selesai" class="table align-items-center text-white">
                                             <thead>
                                                 <tr>
                                                     <th>Judul</th>

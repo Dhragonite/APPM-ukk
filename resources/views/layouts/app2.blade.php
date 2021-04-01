@@ -36,14 +36,14 @@
         </div>
 
             
-        @stack('js')
-        @yield('script')
-        
         @auth()
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
-
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
         @endauth
+        
+        @yield('script')
+        @stack('js')
+        
     </body>
        
 </html>

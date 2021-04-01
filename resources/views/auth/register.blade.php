@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{ asset('urbanuiRegister') }}/assets/css/login.css">
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -71,11 +72,11 @@
             <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Kirim">
             </form>
             <p class="login-wrapper-footer-text">Sudah Punya Akun? <a href="{{ route('login') }}" class="text-reset">Login di sini!</a> </p>
-            <a href="/" class="text-reset">Kembali</a>  
+            <a href="/" class="text-dark">Kembali</a>  
            </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="{{ asset('urbanuiRegister') }}/assets/images/login.jpg" alt="login image" class="login-img">
+          <img src="{{ asset('maundy') }}/assets/img/bg.jpg" alt="login image" class="login-img" >
         </div>
       </div>
     </div>

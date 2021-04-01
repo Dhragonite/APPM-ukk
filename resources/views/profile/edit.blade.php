@@ -1,17 +1,36 @@
-@extends('layouts.app',['class' => 'bg-default'],  ['title' => __('User Profile')])
+@extends('layouts.app2',['class' => 'bg-default'],  ['title' => __('User Profile')])
+
+@section('style')
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+  <!-- Favicons -->
+<link href="{{ asset('maundy') }}/assets/img/favicon.png" rel="icon">
+<link href="{{ asset('maundy') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+<link href="{{ asset('maundy') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ asset('maundy') }}/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+<link href="{{ asset('maundy') }}/assets/css/style.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
-<div class="header bg-gradient-primary py-7 py-lg-8">
-</div>
-    <div class="container-fluid mt--9 pb-5">
+ <main id="main">
+ <div class="container-fluid mt--9 pb-5" style="padding-top:150pt" >
         <div class="row justify-content-md-center">
             <div class="col-xl-11 order-xl-1">
-                <div class="card bg-secondary shadow">
-                    <div class="card-header bg-white border-0">
+                    <div class="card-header bg-transparent border-0 shadow">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">{{ __('Edit Profile') }}</h3>
+                            <h3 class="mb-0 text-white" style="padding-left:20px">{{ __('Edit Profile') }}</h3>
                         </div>
                     </div>
+                <div class="card bg-light shadow">
                     <div class="card-body">
                         <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
                             @csrf
@@ -109,4 +128,23 @@
         </div>
         @include('layouts.footers.nav')
     </div>
+  </main><!-- End #main -->
+@endsection
+
+@section('script')
+ <!-- Vendor JS Files -->
+<script src="{{ asset('maundy') }}/assets/vendor/jquery/jquery.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/php-email-form/validate.js"></script>
+<script src="{{ asset('maundy') }}/assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main JS File -->
+<script src="{{ asset('maundy') }}/assets/js/main.js"></script>
+@endsection
+
+
+
+@section('content')
+
 @endsection

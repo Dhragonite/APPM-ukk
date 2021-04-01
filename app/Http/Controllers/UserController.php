@@ -35,11 +35,11 @@ class UserController extends Controller
 
         $input = $request->all();
         $user = User::create([
-            'nama' => ['required', 'string', 'max:255'],
-            'nik'   => ['required', 'string', 'max:16', 'unique:users'],
-            'telp' =>   ['required', 'string', 'max:13'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nama'          => $input['nama'],
+            'nik'           => $input['nik'],
+            'email'         => $input['email'],
+            'telp'          => $input['telp'],
+            'password'      => Hash::make($input['password']),
         ]);
         $user->assignRole('user');
 

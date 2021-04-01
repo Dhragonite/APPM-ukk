@@ -7,18 +7,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-default">
-            <div class="navbar-collapse-header">
-                <div class="row">
-                    <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation" style="float: right;">
+                <span></span>
+                <span></span>
+            </button>
             <ul class="navbar-nav ml-lg-auto">
                 @hasanyrole('user')
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ route('pengaduan') }}">
+                    <a class="nav-link nav-link-icon text-white" href="{{ route('pengaduan') }}">
                         <span>{{ __('Laporan') }}</a>
                     </a>
                 </li>
@@ -31,7 +27,7 @@
                 </li>
                 @endhasanyrole
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span>{{ auth()->user()->nama }}</span>
                         <i class="ni ni-bold-down"></i>
                     </a>
